@@ -163,10 +163,11 @@ typedef void (*evmc_get_tx_context_fn)(struct evmc_tx_context* result,
  *  @param      context  The pointer to the Host execution context.
  *  @param      number   The block number. Must be a value between
  *                       (and including) 0 and 255.
+ *  @return              1 if exists, 0 otherwise.
  */
-typedef void (*evmc_get_block_hash_fn)(struct evmc_uint256be* result,
-                                       struct evmc_context* context,
-                                       int64_t number);
+typedef int (*evmc_get_block_hash_fn)(struct evmc_uint256be* result,
+                                      struct evmc_context* context,
+                                      int64_t number);
 
 /**
  * The execution status code.
